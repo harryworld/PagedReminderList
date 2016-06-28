@@ -11,6 +11,9 @@
 		D145F2CA1D20CE26008AAF66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F2C91D20CE26008AAF66 /* ViewController.swift */; };
 		D145F2CC1D20CE26008AAF66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D145F2CB1D20CE26008AAF66 /* Assets.xcassets */; };
 		D145F2CF1D20CE26008AAF66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D145F2CD1D20CE26008AAF66 /* Main.storyboard */; };
+		D145F2DA1D2111FE008AAF66 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F2D81D2111FE008AAF66 /* Item.swift */; };
+		D145F2DB1D2111FE008AAF66 /* Item.xib in Resources */ = {isa = PBXBuildFile; fileRef = D145F2D91D2111FE008AAF66 /* Item.xib */; };
+		D145F2DD1D2112DC008AAF66 /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		D145F2CB1D20CE26008AAF66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D145F2CE1D20CE26008AAF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D145F2D01D20CE26008AAF66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D145F2D81D2111FE008AAF66 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D145F2D91D2111FE008AAF66 /* Item.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Item.xib; sourceTree = "<group>"; };
+		D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +60,11 @@
 			children = (
 				D145F2C71D20CE26008AAF66 /* AppDelegate.swift */,
 				D145F2C91D20CE26008AAF66 /* ViewController.swift */,
+				D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */,
 				D145F2CB1D20CE26008AAF66 /* Assets.xcassets */,
 				D145F2CD1D20CE26008AAF66 /* Main.storyboard */,
+				D145F2D81D2111FE008AAF66 /* Item.swift */,
+				D145F2D91D2111FE008AAF66 /* Item.xib */,
 				D145F2D01D20CE26008AAF66 /* Info.plist */,
 			);
 			path = PagedReminderList;
@@ -120,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D145F2CC1D20CE26008AAF66 /* Assets.xcassets in Resources */,
+				D145F2DB1D2111FE008AAF66 /* Item.xib in Resources */,
 				D145F2CF1D20CE26008AAF66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D145F2CA1D20CE26008AAF66 /* ViewController.swift in Sources */,
+				D145F2DD1D2112DC008AAF66 /* MyScrollView.swift in Sources */,
+				D145F2DA1D2111FE008AAF66 /* Item.swift in Sources */,
 				D145F2C81D20CE26008AAF66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +287,7 @@
 				D145F2D51D20CE26008AAF66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
