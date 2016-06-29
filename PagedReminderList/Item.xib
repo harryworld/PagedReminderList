@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Item" customModule="PagedReminderList" customModuleProvider="target">
             <connections>
+                <outlet property="labelField" destination="kek-rQ-f6K" id="8Cb-Np-bUD"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,19 +17,27 @@
             <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kek-rQ-f6K">
-                    <rect key="frame" x="106" y="71" width="37" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="P4c-uh-qcp">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kek-rQ-f6K">
+                    <rect key="frame" x="88" y="71" width="72" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="B1F-Td-OxS"/>
+                        <constraint firstAttribute="width" constant="68" id="xLe-ZP-ueT"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="P4c-uh-qcp">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
+            <constraints>
+                <constraint firstItem="kek-rQ-f6K" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="jVa-D4-ieG"/>
+                <constraint firstItem="kek-rQ-f6K" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="tMp-BK-ML1"/>
+            </constraints>
         </customView>
         <customObject id="pW0-Dt-p9H" customClass="Item" customModule="PagedReminderList" customModuleProvider="target">
             <connections>
-                <outlet property="textField" destination="kek-rQ-f6K" id="ZO5-Vu-S5f"/>
+                <outlet property="textField" destination="kek-rQ-f6K" id="QB9-TT-lhZ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="xZQ-39-6zp"/>
             </connections>
         </customObject>

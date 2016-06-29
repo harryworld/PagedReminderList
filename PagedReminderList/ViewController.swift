@@ -11,12 +11,17 @@ import Cocoa
 class ViewController: NSViewController {
 
     @IBOutlet weak var scrollView: MyScrollView!
-    @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var collectionView: MyCollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        collectionView.setXOffset(248)
     }
 
     override var representedObject: AnyObject? {
@@ -25,21 +30,25 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func gotoInitial(sender: AnyObject) {
+        collectionView.scrollToX(0)
+    }
+    
     @IBAction func press(sender: AnyObject) {
         print("press")
         
-        NSAnimationContext.beginGrouping()
-        NSAnimationContext.currentContext().duration = 3
-        scrollView.animator().documentView?.scrollPoint(NSMakePoint(50, 0))
-        NSAnimationContext.endGrouping()
+        collectionView.scrollToX(248)
     }
 
+    @IBAction func gotoLast(sender: AnyObject) {
+        collectionView.scrollToX(496)
+    }
 }
 
 extension ViewController: NSCollectionViewDataSource {
     
     func collectionView(collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 3
     }
     
     func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {

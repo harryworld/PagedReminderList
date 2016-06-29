@@ -10,6 +10,8 @@ import Cocoa
 
 class Item: NSCollectionViewItem {
 
+    @IBOutlet weak var labelField: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

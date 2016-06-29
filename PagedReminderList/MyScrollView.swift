@@ -10,6 +10,11 @@ import Cocoa
 
 class MyScrollView: NSScrollView {
     
+    override var hasHorizontalScroller: Bool {
+        get { return false }
+        set { }
+    }
+    
     var isSwiping = false {
         didSet {
             Swift.print("isSwiping: \(isSwiping)")
@@ -17,45 +22,38 @@ class MyScrollView: NSScrollView {
     }
     var currentOffset = CGPoint(x: 0, y: 0)
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
-
-        // Drawing code here.
-    }
-    
     override func scrollWheel(theEvent: NSEvent) {
-        
-        //theEvent.trackSwipeEventWithOptions(.LockDirection, dampenAmountThresholdMin: 0, max: 0) { (gestureAmount, phase, isCompleted, stop) in
-            
-            //if phase == NSEventPhase.Began {
-                
-            //}
-            
-            //Swift.print(gestureAmount)
-            
-            //self.documentView?.scrollPoint(NSMakePoint(248 * gestureAmount, 0))
-        //}
         
         switch theEvent.phase {
         case NSEventPhase.Began:
             isSwiping = true
+            if let collectionView = self.documentView as? MyCollectionView {
+                collectionView.setXOffset(248)
+            }
             currentOffset = self.documentVisibleRect.origin
+            Swift.print("Start : \(currentOffset)")
         case NSEventPhase.Changed:
-            Swift.print(theEvent.scrollingDeltaX)
+            Swift.print(self.documentVisibleRect.origin.x)
+            super.scrollWheel(theEvent)
         case NSEventPhase.Ended:
             isSwiping = false
-            Swift.print(self.documentVisibleRect.origin)
-            let offsetX = self.documentVisibleRect.origin.x - currentOffset.x
+            Swift.print("End at: \(self.documentVisibleRect.origin)")
             
-            if offsetX > 125 {
-                self.contentView.animator().bounds.offsetInPlace(dx: 125, dy: 0)
-            } else {
-                self.contentView.animator().bounds.offsetInPlace(dx: -125, dy: 0)
+            let offsetX = self.documentVisibleRect.origin.x
+            let diff = offsetX - currentOffset.x
+            
+            if let collectionView = self.documentView as? MyCollectionView {
+                if diff > 125 {
+                    collectionView.scrollToX(248 * 2)
+                } else if diff < -125 {
+                    collectionView.scrollToX(248 * 0)
+                } else {
+                    collectionView.scrollToX(248 * 1)
+                }
             }
-            
         default: break
         }
         
-        super.scrollWheel(theEvent)
+        //super.scrollWheel(theEvent)
     }
 }

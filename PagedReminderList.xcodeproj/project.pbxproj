@@ -14,6 +14,7 @@
 		D145F2DA1D2111FE008AAF66 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F2D81D2111FE008AAF66 /* Item.swift */; };
 		D145F2DB1D2111FE008AAF66 /* Item.xib in Resources */ = {isa = PBXBuildFile; fileRef = D145F2D91D2111FE008AAF66 /* Item.xib */; };
 		D145F2DD1D2112DC008AAF66 /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */; };
+		D1894BFB1D23856600B18A23 /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1894BFA1D23856600B18A23 /* MyCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D145F2D81D2111FE008AAF66 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D145F2D91D2111FE008AAF66 /* Item.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Item.xib; sourceTree = "<group>"; };
 		D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
+		D1894BFA1D23856600B18A23 /* MyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				D145F2C71D20CE26008AAF66 /* AppDelegate.swift */,
 				D145F2C91D20CE26008AAF66 /* ViewController.swift */,
 				D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */,
+				D1894BFA1D23856600B18A23 /* MyCollectionView.swift */,
 				D145F2CB1D20CE26008AAF66 /* Assets.xcassets */,
 				D145F2CD1D20CE26008AAF66 /* Main.storyboard */,
 				D145F2D81D2111FE008AAF66 /* Item.swift */,
@@ -145,6 +148,7 @@
 				D145F2DD1D2112DC008AAF66 /* MyScrollView.swift in Sources */,
 				D145F2DA1D2111FE008AAF66 /* Item.swift in Sources */,
 				D145F2C81D20CE26008AAF66 /* AppDelegate.swift in Sources */,
+				D1894BFB1D23856600B18A23 /* MyCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

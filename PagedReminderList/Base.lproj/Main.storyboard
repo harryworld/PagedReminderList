@@ -673,16 +673,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl7-yp-j6T" customClass="MyScrollView" customModule="PagedReminderList" customModuleProvider="target">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" horizontalScrollElasticity="allowed" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="rl7-yp-j6T" customClass="MyScrollView" customModule="PagedReminderList" customModuleProvider="target">
                                 <rect key="frame" x="115" y="55" width="250" height="160"/>
                                 <clipView key="contentView" id="hbr-8N-LSE">
                                     <rect key="frame" x="1" y="1" width="248" height="158"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView id="e65-0p-yB9">
+                                        <collectionView id="e65-0p-yB9" customClass="MyCollectionView" customModule="PagedReminderList" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="z2g-w6-px5">
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" id="z2g-w6-px5">
                                                 <size key="itemSize" width="248" height="158"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -707,13 +707,33 @@
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uks-Jq-d60">
-                                <rect key="frame" x="200" y="13" width="81" height="32"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J30-bg-KR9">
+                                <rect key="frame" x="290" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Page 2" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J30-bg-KR9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="press:" target="XfG-lQ-9wD" id="811-yw-XBj"/>
+                                    <action selector="gotoLast:" target="XfG-lQ-9wD" id="kjB-NG-nVP"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o0s-MC-X5T">
+                                <rect key="frame" x="108" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Page 0" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vVI-5g-utC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="gotoInitial:" target="XfG-lQ-9wD" id="Wsw-dl-Bro"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3V-gG-wDm">
+                                <rect key="frame" x="200" y="13" width="80" height="32"/>
+                                <buttonCell key="cell" type="push" title="Page 1" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TCW-gF-MAF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="press:" target="XfG-lQ-9wD" id="D6s-uH-2L0"/>
                                 </connections>
                             </button>
                         </subviews>
