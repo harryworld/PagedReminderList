@@ -46,4 +46,40 @@ class MyCollectionView: NSCollectionView {
         NSAnimationContext.endGrouping()
     }
     
+    func setYOffset(y:CGFloat) {
+        
+        guard let layout = collectionViewLayout as? NSCollectionViewFlowLayout else { return }
+        guard let numItems = dataSource?.collectionView(self, numberOfItemsInSection: 0) else { return }
+        guard let scrollView = enclosingScrollView else { return }
+        
+        // Calculate size manually, as it seems this doesn't get done properly
+        // on initial collection view loading and layout
+        let contentView = scrollView.contentView
+        let itemWidth = bounds.width
+        let itemHeight = bounds.height
+        let spacing = layout.minimumLineSpacing
+        
+        let width = CGFloat(numItems) * itemWidth + CGFloat(numItems - 1) * spacing
+        frame = NSRect(x: 0, y: 0, width: width, height: itemHeight)
+        
+        contentView.scrollPoint(NSPoint(x: 0, y: y))
+        scrollView.reflectScrolledClipView(contentView)
+    }
+    
+    func scrollToY(y:CGFloat) {
+        
+        guard let scrollView = enclosingScrollView else { return }
+        
+        let contentView = scrollView.contentView
+        NSAnimationContext.beginGrouping()
+        NSAnimationContext.currentContext().duration = 0.5
+        
+        let currentY = contentView.bounds.origin.y
+        let dy = y - currentY
+        
+        contentView.animator().bounds.offsetInPlace(dx: 0, dy: dy)
+        scrollView.reflectScrolledClipView(contentView)
+        NSAnimationContext.endGrouping()
+    }
+    
 }

@@ -27,28 +27,22 @@ class MyScrollView: NSScrollView {
         switch theEvent.phase {
         case NSEventPhase.Began:
             isSwiping = true
-            if let collectionView = self.documentView as? MyCollectionView {
-                collectionView.setXOffset(248)
-            }
             currentOffset = self.documentVisibleRect.origin
             Swift.print("Start : \(currentOffset)")
         case NSEventPhase.Changed:
-            Swift.print(self.documentVisibleRect.origin.x)
+            Swift.print(self.documentVisibleRect.origin.y)
             super.scrollWheel(theEvent)
         case NSEventPhase.Ended:
             isSwiping = false
             Swift.print("End at: \(self.documentVisibleRect.origin)")
             
-            let offsetX = self.documentVisibleRect.origin.x
-            let diff = offsetX - currentOffset.x
+            let offsetY = self.documentVisibleRect.origin.y
+            let diff = offsetY - currentOffset.y
             
             if let collectionView = self.documentView as? MyCollectionView {
-                if diff > 125 {
-                    collectionView.scrollToX(248 * 2)
-                } else if diff < -125 {
-                    collectionView.scrollToX(248 * 0)
-                } else {
-                    collectionView.scrollToX(248 * 1)
+                Swift.print("diff: \(diff)")
+                if diff >= -50 {
+                    collectionView.scrollToY(50 * 1)
                 }
             }
         default: break

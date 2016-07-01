@@ -21,7 +21,7 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        collectionView.setXOffset(248)
+        collectionView.setYOffset(50)
     }
 
     override var representedObject: AnyObject? {
@@ -30,25 +30,12 @@ class ViewController: NSViewController {
         }
     }
 
-    @IBAction func gotoInitial(sender: AnyObject) {
-        collectionView.scrollToX(0)
-    }
-    
-    @IBAction func press(sender: AnyObject) {
-        print("press")
-        
-        collectionView.scrollToX(248)
-    }
-
-    @IBAction func gotoLast(sender: AnyObject) {
-        collectionView.scrollToX(496)
-    }
 }
 
 extension ViewController: NSCollectionViewDataSource {
     
     func collectionView(collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {
