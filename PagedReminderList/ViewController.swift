@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SwiftyTimer
 
 class ViewController: NSViewController {
 
@@ -21,7 +22,10 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        collectionView.setYOffset(50)
+        
+        NSTimer.after(0.3) { 
+            self.collectionView.setYOffset(50)
+        }
     }
 
     override var representedObject: AnyObject? {

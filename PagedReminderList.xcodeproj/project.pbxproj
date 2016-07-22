@@ -15,7 +15,34 @@
 		D145F2DB1D2111FE008AAF66 /* Item.xib in Resources */ = {isa = PBXBuildFile; fileRef = D145F2D91D2111FE008AAF66 /* Item.xib */; };
 		D145F2DD1D2112DC008AAF66 /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */; };
 		D1894BFB1D23856600B18A23 /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1894BFA1D23856600B18A23 /* MyCollectionView.swift */; };
+		D1CCF2701D42719E00072193 /* SwiftyTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CCF26F1D42719E00072193 /* SwiftyTimer.framework */; };
+		D1CCF2711D42719F00072193 /* SwiftyTimer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1CCF26F1D42719E00072193 /* SwiftyTimer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D1CCF2771D4271B400072193 /* SwiftyTimer.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1CCF2761D4271B400072193 /* SwiftyTimer.framework.dSYM */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D1CCF2721D42719F00072193 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D1CCF2711D42719F00072193 /* SwiftyTimer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1CCF2741D4271A900072193 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				D1CCF2771D4271B400072193 /* SwiftyTimer.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D145F2C41D20CE26008AAF66 /* PagedReminderList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagedReminderList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +55,8 @@
 		D145F2D91D2111FE008AAF66 /* Item.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Item.xib; sourceTree = "<group>"; };
 		D145F2DC1D2112DC008AAF66 /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		D1894BFA1D23856600B18A23 /* MyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
+		D1CCF26F1D42719E00072193 /* SwiftyTimer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyTimer.framework; path = Carthage/Build/Mac/SwiftyTimer.framework; sourceTree = "<group>"; };
+		D1CCF2761D4271B400072193 /* SwiftyTimer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyTimer.framework.dSYM; path = Carthage/Build/Mac/SwiftyTimer.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1CCF2701D42719E00072193 /* SwiftyTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +74,8 @@
 		D145F2BB1D20CE25008AAF66 = {
 			isa = PBXGroup;
 			children = (
+				D1CCF2761D4271B400072193 /* SwiftyTimer.framework.dSYM */,
+				D1CCF26F1D42719E00072193 /* SwiftyTimer.framework */,
 				D145F2C61D20CE26008AAF66 /* PagedReminderList */,
 				D145F2C51D20CE26008AAF66 /* Products */,
 			);
@@ -83,6 +115,8 @@
 				D145F2C01D20CE26008AAF66 /* Sources */,
 				D145F2C11D20CE26008AAF66 /* Frameworks */,
 				D145F2C21D20CE26008AAF66 /* Resources */,
+				D1CCF2721D42719F00072193 /* Embed Frameworks */,
+				D1CCF2741D4271A900072193 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -253,6 +287,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = PagedReminderList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stayrealhk.PagedReminderList;
@@ -265,6 +303,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = PagedReminderList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stayrealhk.PagedReminderList;
