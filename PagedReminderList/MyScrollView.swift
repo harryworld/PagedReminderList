@@ -9,12 +9,12 @@
 import Cocoa
 
 class MyScrollView: NSScrollView {
-    
+
     override var hasHorizontalScroller: Bool {
         get { return false }
         set { }
     }
-    
+
     var isSwiping = false {
         didSet {
             Swift.print("isSwiping: \(isSwiping)")
@@ -23,7 +23,7 @@ class MyScrollView: NSScrollView {
     var currentOffset = CGPoint(x: 0, y: 0)
 
     override func scrollWheel(theEvent: NSEvent) {
-        
+
         switch theEvent.phase {
         case NSEventPhase.Began:
             isSwiping = true
@@ -35,10 +35,10 @@ class MyScrollView: NSScrollView {
         case NSEventPhase.Ended:
             isSwiping = false
             Swift.print("End at: \(self.documentVisibleRect.origin)")
-            
+
             let offsetY = self.documentVisibleRect.origin.y
             let diff = offsetY - currentOffset.y
-            
+
             if let collectionView = self.documentView as? MyCollectionView {
                 Swift.print("diff: \(diff)")
                 if diff >= -50 {
@@ -47,7 +47,7 @@ class MyScrollView: NSScrollView {
             }
         default: break
         }
-        
+
         //super.scrollWheel(theEvent)
     }
 }
